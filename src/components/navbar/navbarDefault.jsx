@@ -16,9 +16,8 @@ import { IoPersonAddSharp } from "react-icons/io5";
 import { FaCartArrowDown } from "react-icons/fa";
 
 const NavbarDefault = () => {
-  console.log(routes);
   return (
-    <div className='lg:flex hidden  justify-between w-full'>
+    <div className='container lg:flex hidden  justify-between items-center w-full'>
       <div className='font-[700] text-[25px]'>Crystal Shop</div>
       <div>
         {routes.map((route)=>(
@@ -26,9 +25,9 @@ const NavbarDefault = () => {
         ))}
       </div>
       <div className='flex justify-center items-center gap-x-2'>
-        <Button icon={<RiLoginCircleLine/>} text={'Login'}/>
-        <Button icon={<IoPersonAddSharp/>} text={'Register'}/>
-        <Button icon={<FaCartArrowDown/>} text={'Cart'}/>
+        <Link to={'/login'}><Button icon={<RiLoginCircleLine/>} text={'Login'}/></Link>
+        <Link to={'/register'}><Button icon={<IoPersonAddSharp/>} text={'Register'}/></Link>
+        <Link to={'/cart'}><Button icon={<FaCartArrowDown/>} text={'Cart'}/></Link>
       </div>
     </div>
   )
