@@ -19,7 +19,7 @@ const NavbarMobile = () => {
   return (
     <div className='container lg:hidden block py-4'>
       <div className='flex justify-between items-center'>
-        <div className='text-[20px] font-bold'>Crystal Shop</div>
+        <Link to={'/'} className='text-[20px] font-bold'>Crystal Shop</Link>
         <div className='cursor-pointer text-[20px]' onClick={()=>setToggle(!toggle)}>
           {toggle ? <i><IoMdClose/></i> :  <i className='text-[24px]'><FaBarsStaggered/></i>}
         </div>

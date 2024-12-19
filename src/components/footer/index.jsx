@@ -6,7 +6,7 @@ import FooterMobile from './footerMobile'
 
 const Footer = () => {
   return (
-    <div>
+    <div className='mt-10'>
         <FooterDefault/>
         <FooterMobile/>
     </div>
