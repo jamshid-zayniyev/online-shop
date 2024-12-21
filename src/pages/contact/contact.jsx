@@ -1,5 +1,4 @@
 import React from 'react'
-import Maps from '../../components/ui/map'
 import Googlemap from '../../components/ui/googlemap'
 
 import {ButtonV2} from "../../components/ui/button"
@@ -113,7 +112,6 @@ const Contact = () => {
     </div>
 </section>
 <div>
-    {/* <Maps/> */}
     <Googlemap/>
 </div>
     </div>
