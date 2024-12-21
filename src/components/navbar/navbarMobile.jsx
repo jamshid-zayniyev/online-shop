@@ -12,7 +12,7 @@ import routes from '../../routes';
 
 //
 import { Link } from 'react-router-dom';
-import Button from '../ui/button';
+import {Button} from '../ui/button';
 
 const NavbarMobile = () => {
   const [toggle,setToggle] = useState(false)

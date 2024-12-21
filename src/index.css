@@ -9,3 +9,7 @@
 svg{
     display: inline;
 }
+.swiper-button-next::after,
+.swiper-button-prev::after{
+    color: azure;
+}

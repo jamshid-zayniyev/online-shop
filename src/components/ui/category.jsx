@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Button from "./button"
+import {Button} from "./button"
 
 const Category = ({filterProducts}) => {
     const [active,setActive] = useState('all')

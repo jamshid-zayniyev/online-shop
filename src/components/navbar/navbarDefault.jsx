@@ -8,7 +8,7 @@ import routes from '../../routes'
 import { Link } from 'react-router-dom'
 
 // components ui
-import Button from '../ui/button';
+import {Button} from '../ui/button';
 
 // icons
 import { RiLoginCircleLine } from "react-icons/ri";

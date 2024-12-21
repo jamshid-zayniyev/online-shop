@@ -6,4 +6,14 @@ const Button = ({onClick,icon,text,active=false}) => {
   )
 }
 
-export default Button
+
+
+const ButtonV2 = ({children, onClick, style}) => {
+  return (
+    <div onClick={onClick} className={`text-white bg-[#212529] rounded-md inline-block hover:bg-[#34393e] cursor-pointer ${style}`}>{children}</div>
+  )
+}
+
+
+export {Button, ButtonV2}
+
