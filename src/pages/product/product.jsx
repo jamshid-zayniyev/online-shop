@@ -37,9 +37,9 @@ const Product = () => {
     { active?.id ? 
 
 // -------------------------------
-        <div className=' flex justify-center items-center gap-5 my-5'>
-            <div className='w-[50%] flex justify-center'><img className='w-full max-w-[400px]' src={logo} alt="image product" /></div>
-        <div className='w-[50%]'>
+        <div className='md:flex justify-center items-center gap-5 my-5'>
+            <div className='md:w-[50%] flex justify-center'><img className='w-full max-w-[400px]' src={logo} alt="image product" /></div>
+        <div className='md:w-[50%]'>
 
             <h1 class="text-3xl my-5 line-clamp-3">{active.title}</h1>
             <p class="mb-5 line-clamp-3">{active.description}</p>
