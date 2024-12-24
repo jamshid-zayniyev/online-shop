@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 //
 import { Rating } from 'react-simple-star-rating';
@@ -6,10 +7,15 @@ import { Rating } from 'react-simple-star-rating';
 const Card = ({data}) => {
     const [rating, setRating] = useState(0)
 
+    const navigate = useNavigate()
     // Catch Rating value
     const handleRating = (rate) => {
       setRating(rate)
   
+    }
+
+    const handleNavigate = (url) =>{
+       navigate(`/product/${url}`)
     }
     
   
@@ -26,7 +32,7 @@ const Card = ({data}) => {
             <h1 class="text-3xl my-5 line-clamp-3">{value.title}</h1>
             <p class="mb-5 line-clamp-3">{value.description}</p>
             <h2 class="font-semibold mb-5">${value.price}</h2>
-            <button class="p-2 px-6 bg-purple-500 text-white rounded-md hover:bg-purple-600">Add To Cart</button>
+            <button class="p-2 px-6 bg-purple-500 text-white rounded-md hover:bg-purple-600" onClick={()=>handleNavigate(value.id)}>Add To Cart</button>
         </section>
             )) : "No Data"
         }

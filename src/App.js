@@ -12,6 +12,7 @@ const Contact = lazy(()=> import('./pages/contact/contact.jsx'))
 const Login = lazy(()=> import('./pages/login/login.jsx'))
 const Register = lazy(()=> import('./pages/register/register.jsx'))
 const Cart = lazy(()=> import('./pages/cart/cart.jsx'))
+const Product = lazy(()=> import('./pages/product/product.jsx'))
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/cart' element={<Cart/>}/>
+        <Route path='/product/:slug' element={<Product/>}/>
         <Route path='*' element={<h1>Page not Found</h1>}/>
       </Routes>
 
