@@ -1,9 +1,11 @@
-import React, { lazy } from 'react'
+import React, { lazy, createContext, Fragment, useState } from 'react'
 
 // navbar and footer components
 import Navbar from "./components/navbar"
 import Footer from './components/footer'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useNavigate } from 'react-router-dom'
+// context
+import MyContext from './context/MyContext.js'
 
 const Home = lazy(()=> import('./pages/home/home.jsx'))
 const About = lazy(()=> import('./pages/about/about.jsx'))
@@ -15,8 +17,28 @@ const Cart = lazy(()=> import('./pages/cart/cart.jsx'))
 const Product = lazy(()=> import('./pages/product/product.jsx'))
 
 const App = () => {
+
+  // cart basket
+  const [basket,setBasket] = useState([])
+  const navigate = useNavigate()
+
+  const addToCart = (item) =>{
+
+    let findItem = basket.find(x=>x.product.id == item.product.id)
+   
+
+
+    if(!findItem?.product?.id){
+      //
+      navigate('/cart')
+      basket.unshift(item)
+      setBasket(basket)
+    }
+  } 
+  
   return (
-    <div>
+    <Fragment>
+    <MyContext.Provider value={{addToCart,basket,setBasket}}>
       <Navbar/>
 
       <Routes>
@@ -32,7 +54,8 @@ const App = () => {
       </Routes>
 
       <Footer/>
-    </div>
+    </MyContext.Provider>
+    </Fragment>
   )
 }
 

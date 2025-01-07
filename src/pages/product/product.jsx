@@ -1,16 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import logo from "../../assets/logo.webp"
 
 import { Rating } from 'react-simple-star-rating';
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import Allproducts from '../../data/mockData';
 import { FaArrowLeft } from "react-icons/fa";
+import MyContext from '../../context/MyContext';
 
 
 const Product = () => {
 
 
+    const {addToCart} = useContext(MyContext)
+
+
     const [active,setActive] = useState(null)
+    const navigate = useNavigate()
 
     // const {slug} = usePathname()
     // const params = useParams()
@@ -30,6 +35,9 @@ const Product = () => {
     },[slug])
 
 
+   
+
+
 
   return (
     <div className='container'>
@@ -38,16 +46,17 @@ const Product = () => {
 
 // -------------------------------
         <div className='md:flex justify-center items-center gap-5 my-5'>
-            <div className='md:w-[50%] flex justify-center'><img className='w-full max-w-[400px]' src={logo} alt="image product" /></div>
+            <div className='md:w-[50%] flex justify-center'><img className='w-full max-w-[300px]' src={active.image} alt="image product" /></div>
         <div className='md:w-[50%]'>
 
-            <h1 class="text-3xl my-5 line-clamp-3">{active.title}</h1>
-            <p class="mb-5 line-clamp-3">{active.description}</p>
-            <h2 class="font-semibold mb-5">{active.price}</h2>
+            <h1 className="text-3xl my-5 line-clamp-3">{active.title}</h1>
+            <p className="mb-5 line-clamp-3">{active.description}</p>
+            <h1 className="font-semibold mb-5">${active.price} </h1>
             <div>
                 <Rating initialValue={3} readonly={true} />
             </div>
-            <button class="mt-4 p-2 px-6 bg-purple-500 text-white rounded-md hover:bg-purple-600">Add To Cart</button>
+            <button onClick={()=>addToCart({product:active, q:1})} className="mt-4 mr-2 p-2 px-6 bg-purple-500 text-white rounded-md hover:bg-purple-600">Add To Cart</button>
+            <button onClick={()=>navigate('/cart')} className="mt-4 p-2 px-6 bg-gray-500 text-white rounded-md hover:bg-purple-600">Go To Cart</button>
         </div>
         </div>
         

@@ -25,7 +25,7 @@ const Home = () => {
 
       <div className='container'>
         <TitleText style={'text-center'} text='Lastest Products'/>
-        <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-300"/>
+        <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-300"/>
         <Product/>
       </div>
       
