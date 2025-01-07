@@ -7,6 +7,10 @@ import { Route, Routes, useNavigate } from 'react-router-dom'
 // context
 import MyContext from './context/MyContext.js'
 
+//translate
+import { useTranslation } from 'react-i18next';
+import './i18n';
+
 const Home = lazy(()=> import('./pages/home/home.jsx'))
 const About = lazy(()=> import('./pages/about/about.jsx'))
 const Products = lazy(()=> import('./pages/products/products.jsx'))
@@ -17,11 +21,18 @@ const Cart = lazy(()=> import('./pages/cart/cart.jsx'))
 const Product = lazy(()=> import('./pages/product/product.jsx'))
 
 const App = () => {
-
+  
   // cart basket
   const [basket,setBasket] = useState([])
   const navigate = useNavigate()
 
+  // translate
+  const { t, i18n } = useTranslation();
+  
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  };
+  
   const addToCart = (item) =>{
 
     let findItem = basket.find(x=>x.product.id == item.product.id)
@@ -35,10 +46,18 @@ const App = () => {
       setBasket(basket)
     }
   } 
+
   
   return (
     <Fragment>
     <MyContext.Provider value={{addToCart,basket,setBasket}}>
+    <div>
+      <h1>{t('welcome')}</h1>
+      <p>{t('greeting')}</p>
+      <button onClick={() => changeLanguage('en')}>English</button>
+      <button onClick={() => changeLanguage('ru')}>Русский</button>
+      <button onClick={() => changeLanguage('uz')}>O'zbek</button>
+    </div>
       <Navbar/>
 
       <Routes>
