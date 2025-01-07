@@ -8,8 +8,8 @@ import { Route, Routes, useNavigate } from 'react-router-dom'
 import MyContext from './context/MyContext.js'
 
 //translate
-import { useTranslation } from 'react-i18next';
-import './i18n';
+// import { useTranslation } from 'react-i18next';
+// import './i18n';
 
 const Home = lazy(()=> import('./pages/home/home.jsx'))
 const About = lazy(()=> import('./pages/about/about.jsx'))
@@ -27,11 +27,11 @@ const App = () => {
   const navigate = useNavigate()
 
   // translate
-  const { t, i18n } = useTranslation();
+  // const { t, i18n } = useTranslation();
   
-  const changeLanguage = (lang) => {
-    i18n.changeLanguage(lang);
-  };
+  // const changeLanguage = (lang) => {
+  //   i18n.changeLanguage(lang);
+  // };
   
   const addToCart = (item) =>{
 
@@ -51,13 +51,13 @@ const App = () => {
   return (
     <Fragment>
     <MyContext.Provider value={{addToCart,basket,setBasket}}>
-    <div>
+    {/* <div>
       <h1>{t('welcome')}</h1>
       <p>{t('greeting')}</p>
       <button onClick={() => changeLanguage('en')}>English</button>
       <button onClick={() => changeLanguage('ru')}>Русский</button>
       <button onClick={() => changeLanguage('uz')}>O'zbek</button>
-    </div>
+    </div> */}
       <Navbar/>
 
       <Routes>
