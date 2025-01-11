@@ -3,4 +3,6 @@ export default {
   about: "About",
   products: "Products",
   contact: "Contact",
+  login:"Login",
+  contact:"Contact"
 };

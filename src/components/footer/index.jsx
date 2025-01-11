@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <div className='mt-10'>
         <FooterDefault/>
-        <FooterMobile/>
+        {/* <FooterMobile/> */}
     </div>
   )
 }

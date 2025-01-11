@@ -2,22 +2,22 @@ const routes = [
     {
         id:1,
         path:'/',
-        element:'Home'
+        element:'home'
     },
     {
         id:2,
         path:'/about',
-        element:'About'
+        element:'about'
     },
     {
         id:3,
         path:'/products',
-        element:'Products'
+        element:'products'
     },
     {
         id:4,
         path:'/contact',
-        element:'Contact'
+        element:'contact'
     },
 ]
 

@@ -2,8 +2,12 @@ import React from 'react'
 import Googlemap from '../../components/ui/googlemap'
 
 import {ButtonV2} from "../../components/ui/button"
+//
+import { useTranslation } from '../../context/LanguageContext';
 
 const Contact = () => {
+    // Tilni o'zgartirish va tarjima qilish
+    const t = useTranslation();
   return (
     <div>
       <section className="bg-blue-50 d:bg-slate-800" id="contact">
@@ -11,7 +15,7 @@ const Contact = () => {
         <div className="mb-4">
             <div className="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-12">
                 <p className="text-base font-semibold uppercase tracking-wide text-blue-600 d:text-blue-200">
-                    Contact
+                    {t('contact')}
                 </p>
                 <h2
                     className="font-heading mb-4 font-bold tracking-tight text-gray-900 d:text-white text-3xl sm:text-5xl">

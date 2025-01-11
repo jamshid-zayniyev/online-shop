@@ -18,9 +18,7 @@ const Cart = lazy(() => import('./pages/cart/cart.jsx'))
 const Product = lazy(() => import('./pages/product/product.jsx'))
 
 const App = () => {
-  // Tilni o'zgartirish va tarjima qilish
-  const t = useTranslation();
-  const { changeLanguage } = useLanguage();
+
 
   // Savatni boshqarish
   const [basket, setBasket] = useState([]);
@@ -46,13 +44,6 @@ const App = () => {
     <Fragment>
         <MyContext.Provider value={{ addToCart, basket, setBasket }}>
           <Navbar />
-
-          <div>
-            <button onClick={() => changeLanguage("en")}>English</button>
-            <button onClick={() => changeLanguage("ru")}>Русский</button>
-            <button onClick={() => changeLanguage("uz")}>O'zbekcha</button>
-          </div>
-
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
